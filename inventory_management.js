@@ -8,18 +8,28 @@ let inventory = [
    {name: "Headset", price: 200, quantity: 120, lowStockLevel: 18},
 ]; // You need click the array to see the data
 
-console.log(inventory)
+console.log(inventory);
 
 // Task 2. Create a Function to Display Product Details
 
 function displayProductDetails(product) {
-    
-    for( let i = 0; i < product.length; i++) {
-        if(product.quantity >= product.lowStockLevel) 
-            {return "in stock";
+        
+        if(product.quantity > product.lowStockLevel) 
+            {console.log(product.name + " price: " + product.price + " quantity: " + product.quantity + " in stock");
         }
     else if(product.quantity <= product.lowStockLevel)
-       {return "low stock"};
-    }
+       {console.log(product.name + " price: " + product.price + " quantity: " + product.quantity + " low stock")};
+    
 };
-console.log(displayProductDetails(inventory))
+displayProductDetails(inventory[0]);
+
+// Task 3. Create a Function to Update Product Stock After Sales
+
+function updateStock(product, unitSold) {
+    product.quantity -= unitSold;
+    if(product.quantity <= 0)
+        console.log("out of stock");
+    else if(product.quantity <= product.lowStockLevel)
+        console.log("low stock");
+}
+updateStock(inventory[0]);
