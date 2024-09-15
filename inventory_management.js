@@ -9,3 +9,17 @@ let inventory = [
 ]; // You need click the array to see the data
 
 console.log(inventory)
+
+// Task 2. Create a Function to Display Product Details
+
+function displayProductDetails(product) {
+    
+    for( let i = 0; i < product.length; i++) {
+        if(product.quantity >= product.lowStockLevel) 
+            {return "in stock";
+        }
+    else if(product.quantity <= product.lowStockLevel)
+       {return "low stock"};
+    }
+};
+console.log(displayProductDetails(inventory))
