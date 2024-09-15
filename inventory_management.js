@@ -56,5 +56,18 @@ function calculateInventoryValue(inventory) {
         sum += product.price * product.quantity;
     }
     console.log(sum);
+    return sum;
 }
 calculateInventoryValue(inventory)
+
+// Task 6. Create a Function to Process a Sale
+
+function processSale(productName, unitSold) {
+    let product = inventory.find(item => item.name === productName);
+    if (product)
+        updateStock(product, unitSold);
+    else
+        console.log("product is not in the inventory");
+    console.log(product.quantity);
+}
+processSale("Ram", 50);
