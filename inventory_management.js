@@ -20,7 +20,7 @@ function displayProductDetails(product) {
     else if(product.quantity <= product.lowStockLevel)
        {console.log(product.name + " price: " + product.price + " quantity: " + product.quantity + " low stock")};
     
-};
+}
 displayProductDetails(inventory[0]);
 
 // Task 3. Create a Function to Update Product Stock After Sales
@@ -32,4 +32,17 @@ function updateStock(product, unitSold) {
     else if(product.quantity <= product.lowStockLevel)
         console.log("low stock");
 }
-updateStock(inventory[0]);
+updateStock(inventory[0], 60);
+
+// Task 4. Create a Function to Check Low Stock Products
+
+function checkLowStock(inventory) {
+    for (let i = 0; i < inventory.length; i++) {
+        const product = inventory[i];
+        if(product.quantity < product.lowStockLevel)
+            console.log(product.name);
+    
+        
+    }
+}
+checkLowStock(inventory);
